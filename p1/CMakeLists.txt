@@ -3,7 +3,7 @@ project(p1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(LLVM_DIST_PATH "/usr/lib/llvm-6.0"
+set(LLVM_DIST_PATH "/usr/lib/llvm-9"
         CACHE STRING "LLVM distribution install path")
 
 set(LLVM_DIR ${LLVM_DIST_PATH}/lib/cmake/llvm)

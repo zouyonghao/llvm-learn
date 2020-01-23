@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
         for (Function::iterator bb_i = func_i.begin(); bb_i != func_i.end(); bb_i++) {
             auto *bb = dyn_cast<BasicBlock>(bb_i);
             for (auto &i_i : bb->getInstList()) {
+                // outs() << i_i.getName() << "\n";
                 if (!i_i.isBinaryOp()) {
                     continue;
                 }
@@ -56,7 +57,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < instruction_replace.size(); i++) {
         ReplaceInstWithInst(instruction_replace[i], instruction_new[i]);
     }
-    Mptr->print(outs(), nullptr);
+    // Mptr->print(outs(), nullptr);
     std::error_code ec;
     raw_ostream *out = new raw_fd_ostream(StringRef("test_result.ll"), ec, sys::fs::F_None);
     Mptr->print(*out, nullptr);

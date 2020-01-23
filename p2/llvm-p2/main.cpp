@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < instruction_replace.size(); i++) {
         ReplaceInstWithInst(instruction_replace[i], instruction_new[i]);
     }
-    Mptr->print(outs(), nullptr);
+    // Mptr->print(outs(), nullptr);
     std::error_code ec;
     raw_ostream *out = new raw_fd_ostream(StringRef("test_result.ll"), ec, sys::fs::F_None);
     Mptr->print(*out, nullptr);
